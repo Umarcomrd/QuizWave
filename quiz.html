@@ -19,7 +19,7 @@
   <main class="stage">
     
     <!-- ============ START SCREEN ============ -->
-    <section class="screen active js-active" id="start-screen" aria-labelledby="start-heading">
+    <section class="screen active screen start-screen" id="start-screen" aria-labelledby="start-heading">
       <p class="eyebrow">Month 2 · JavaScript</p>
       <h1 id="start-heading">Ready to test what you know?</h1>
       <p class="lede">Ten questions on objects, string handling, template literals and floating‑point currency. Answer at your own pace — your score is tallied as you go.</p>
@@ -49,7 +49,7 @@
 
 
 
- <section class="screen js-questions" id="question-screen" aria-labelledby="question-heading">
+ <section class="screen screen question-screen" id="question-screen" aria-labelledby="question-heading">
       <div class="progress-bar">
         <div class="progress-meta">
           <span class="progress-count">Question <strong>1</strong> of 10</span>
@@ -105,7 +105,7 @@
       <!-- ============ RESULT SCREEN ============ -->
    
 
-     <section class="screen" id="result-screen" aria-labelledby="result-heading">
+     <section class="screen screen results-screen" id="result-screen" aria-labelledby="result-heading">
       <p class="eyebrow">Quiz Complete</p>
       <h1 id="result-heading">Nice work.</h1>
 
@@ -127,36 +127,6 @@
   </main>
 
 </div>
-<script>
-
-
-
-
-  let html = `
-
-    
-  `;
-
-
-
-
-
-     let btn = document.querySelector('.js-btntab');
-  btn.addEventListener('click', () => {
-    document.body.innerHTML = html;
-  });
-
-  
-    let move = document.querySelector('.js-move-next');
-    move.addEventListener('click', () => {
-      console.log('hi what is the problem');
-      
-      
-    });
- 
-
-  
-  
-</script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

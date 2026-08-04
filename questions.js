@@ -5,7 +5,7 @@
   
 
 
-const questions = [
+export const questions = [
   {
     questionText: "Which method converts a JavaScript object into a JSON string?",
     options: ["JSON.parse()", "JSON.stringify()", "Object.toString()", "Object.freeze()"],
