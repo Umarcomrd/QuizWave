@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuizWave — JavaScript Fundamentals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="brand-bar">
+    <div class="brand">Quiz<span class="brand-accent">Wave</span></div>
+    <div class="brand-sub">JavaScript Fundamentals</div>
+  </header>
+  <main class="stage">
+    
+    <!-- ============ START SCREEN ============ -->
+    <section class="screen active js-active" id="start-screen" aria-labelledby="start-heading">
+      <p class="eyebrow">Month 2 · JavaScript</p>
+      <h1 id="start-heading">Ready to test what you know?</h1>
+      <p class="lede">Ten questions on objects, string handling, template literals and floating‑point currency. Answer at your own pace — your score is tallied as you go.</p>
+      <div class="stat-row">
+        <div class="stat-card stat-teal">
+          <span class="stat-label">Questions</span>
+          <span class="stat-value">10</span>
+        </div>
+        <div class="stat-card stat-purple">
+          <span class="stat-label">Format</span>
+          <span class="stat-value">MCQ</span>
+        </div>
+        <div class="stat-card stat-orange">
+          <span class="stat-label">Attempts</span>
+          <span class="stat-value">∞</span>
+        </div>
+        <div class="stat-card stat-pink">
+          <span class="stat-label">Pass Mark</span>
+          <span class="stat-value">70%</span>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary btn-large js-btntab" id="start-btn" type="button">Start Quiz</button>
+    </section>
+
+    <!-- ============ QUESTION SCREEn ============ -->
+
+
+
+ <section class="screen js-questions" id="question-screen" aria-labelledby="question-heading">
+      <div class="progress-bar">
+        <div class="progress-meta">
+          <span class="progress-count">Question <strong>1</strong> of 10</span>
+          <span class="progress-score">Score: 0</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width:30%"></div>
+        </div>
+      </div>
+
+      <h2 id="question-heading" class="question-text">
+        Which method converts a JavaScript object into a JSON string?
+      </h2>
+
+      <ul class="options-list">
+        <li>
+          <button class="option" type="button" data-index="0">
+            <span class="option-letter">A</span>
+            <span class="option-text">JSON.parse()</span>
+          </button>
+        </li>
+        <li>
+          <button class="option is-selected" type="button" data-index="1">
+            <span class="option-letter">B</span>
+            <span class="option-text">JSON.stringify()</span>
+          </button>
+        </li>
+        <li>
+          <button class="option" type="button" data-index="2">
+            <span class="option-letter">C</span>
+            <span class="option-text">Object.toString()</span>
+          </button>
+        </li>
+        <li>
+          <button class="option" type="button" data-index="3">
+            <span class="option-letter">D</span>
+            <span class="option-text">Object.freeze()</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="stage-footer">
+        <span class="hint">Select an option to continue</span>
+        <button class="btn btn-primary js-move-next" id="next-btn" type="button">Next Question</button>
+      </div>
+    </section>
+  
+
+
+
+
+
+      <!-- ============ RESULT SCREEN ============ -->
+   
+
+     <section class="screen" id="result-screen" aria-labelledby="result-heading">
+      <p class="eyebrow">Quiz Complete</p>
+      <h1 id="result-heading">Nice work.</h1>
+
+      <div class="score-card">
+        <span class="score-label">Final Score</span>
+        <span class="score-value">8<span class="score-total"> / 10</span></span>
+        <span class="score-message">80% — above the pass mark</span>
+      </div>
+
+      <div class="stage-footer stage-footer-center">
+        <button class="btn btn-ghost" id="review-btn" type="button">Review Answers</button>
+        <button class="btn btn-primary" id="restart-btn" type="button">Play Again</button>
+      </div>
+    </section>
+
+ 
+
+
+  </main>
+
+</div>
+<script>
+
+
+
+
+  let html = `
+
+    
+  `;
+
+
+
+
+
+     let btn = document.querySelector('.js-btntab');
+  btn.addEventListener('click', () => {
+    document.body.innerHTML = html;
+  });
+
+  
+    let move = document.querySelector('.js-move-next');
+    move.addEventListener('click', () => {
+      console.log('hi what is the problem');
+      
+      
+    });
+ 
+
+  
+  
+</script>
+</body>
+</html>
