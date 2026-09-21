@@ -2,16 +2,25 @@
 
 A JavaScript quiz app that tests your knowledge of core JavaScript concepts — objects, JSON, template literals, and more. Built with plain HTML, CSS, and JavaScript (no frameworks).
 
-**Status:** 🚧 In progress — question data and UI are in place, quiz navigation logic (moving between questions, showing results) is currently being built.
+**Status:** ✅ Complete — question data, UI, and navigation logic are all working.
 
-## Features (planned)
+## Features
 
 - [x] Question bank stored as a JS array of objects
 - [x] Start screen, question screen, and results screen
-- [ ] Dynamic question rendering (no page reload between questions)
-- [ ] Score tracking
-- [ ] Progress bar / "Question X of Y" indicator
-- [ ] Final results screen with score summary
+- [x] Dynamic question rendering (no page reload between questions)
+- [x] Score tracking
+- [x] Progress bar / "Question X of Y" indicator
+- [x] Final results screen with score summary and percentage message
+- [x] Correct/wrong answer highlighting, answers lock after first click
+- [x] "Next" disabled until an option is picked
+- [x] Restart resets score, question index, and view
+- [x] 5-minute countdown timer — auto-submits to results at 0:00
+- [x] Code syntax highlighting & monospace styling for code snippets
+- [x] Web Audio API sound effects (select, correct chime, wrong buzzer, victory fanfare) with mute toggle (`M`)
+- [x] Full keyboard navigation (`1`–`4`, `A`–`D`, `Enter`, `Space`, `R`, `M`)
+- [x] Canvas celebration confetti on scoring $\ge 70\%$
+- [x] Smooth CSS screen transitions and micro-interactions (shake on wrong, pop on correct)
 
 ## Tech Stack
 
@@ -23,14 +32,12 @@ A JavaScript quiz app that tests your knowledge of core JavaScript concepts — 
 
 ```
 quizwave/
-├── quiz.html       # Main HTML file
+├── index.html      # Main HTML file
 ├── style.css       # Styling
 ├── questions.js    # Question bank (data only)
 ├── script.js       # Quiz logic (rendering, scoring, navigation)
 └── README.md
 ```
-
-*(Adjust the above to match your actual file names/structure.)*
 
 ## Getting Started
 
@@ -40,7 +47,9 @@ No build tools or installation required.
    ```bash
    git clone https://github.com/Umarcomrd/quizwave.git
    ```
-2. Open `quiz.html` in your browser (or use a Live Server extension in VS Code).
+2. Open `index.html` in your browser (or use a Live Server extension in VS Code).
+
+Note: `script.js` uses `import`/`export`, so `index.html` must be served over `http(s)://` (Live Server, `npx serve`, etc.) rather than opened directly via `file://`.
 
 ## How It Works
 
@@ -56,13 +65,12 @@ Questions are stored in a `questions` array, where each question object has this
 
 The app tracks the current question with an index, renders one question at a time, and updates the score as the user answers.
 
-## Roadmap
+## Stretch Ideas (not yet done)
 
-- Finish question navigation logic
-- Add score tracking and results screen
-- Polish styling and responsiveness
-- (Optional) Add a timer per question
-- (Optional) Deploy via GitHub Pages
+- Shuffle question/option order each playthrough
+- Store high score in localStorage
+- "Review Answers" screen
+- Multiple quiz categories
 
 ## Author
 

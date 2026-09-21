@@ -6,20 +6,27 @@
 <title>QuizWave — JavaScript Fundamentals</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="app-shell">
   <header class="brand-bar">
-    <div class="brand">Quiz<span class="brand-accent">Wave</span></div>
-    <div class="brand-sub">JavaScript Fundamentals</div>
+    <div class="brand-info">
+      <div class="brand">Quiz<span class="brand-accent">Wave</span></div>
+      <div class="brand-sub">JavaScript Fundamentals</div>
+    </div>
+    <div class="brand-actions">
+      <button id="sound-btn" class="icon-btn" type="button" aria-label="Toggle Sound Effects" title="Toggle Sound (Press M)">
+        <span class="sound-icon" aria-hidden="true">🔊</span>
+      </button>
+    </div>
   </header>
   <main class="stage">
-    
+
     <!-- ============ START SCREEN ============ -->
-    <section class="screen active screen start-screen" id="start-screen" aria-labelledby="start-heading">
+    <section class="screen active start-screen" id="start-screen" aria-labelledby="start-heading">
       <p class="eyebrow">Month 2 · JavaScript</p>
       <h1 id="start-heading">Ready to test what you know?</h1>
       <p class="lede">Ten questions on objects, string handling, template literals and floating‑point currency. Answer at your own pace — your score is tallied as you go.</p>
@@ -41,92 +48,91 @@
           <span class="stat-value">70%</span>
         </div>
       </div>
-      
-      <button class="btn btn-primary btn-large js-btntab" id="start-btn" type="button">Start Quiz</button>
+
+      <button class="btn btn-primary btn-large js-btntab" id="start-btn" type="button">
+        <span>Start Quiz</span>
+        <kbd class="kbd-badge" aria-hidden="true">↵ Enter</kbd>
+      </button>
+      <p class="keyboard-guide">💡 Tip: Use keys <kbd>1</kbd>–<kbd>4</kbd> or <kbd>A</kbd>–<kbd>D</kbd> to answer, <kbd>↵ Enter</kbd> to advance, and <kbd>M</kbd> to toggle audio.</p>
     </section>
 
-    <!-- ============ QUESTION SCREEn ============ -->
-
-
-
- <section class="screen screen question-screen" id="question-screen" aria-labelledby="question-heading">
+    <!-- ============ QUESTION SCREEN ============ -->
+    <section class="screen question-screen" id="question-screen" aria-labelledby="question-heading">
       <div class="progress-bar">
         <div class="progress-meta">
           <span class="progress-count">Question <strong>1</strong> of 10</span>
-          <span class="progress-score"></span>
+          <span class="progress-score" aria-label="Timer">5:00</span>
         </div>
-        <div class="progress-track">
-          <div class="progress-fill" style="width:30%"></div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10">
+          <div class="progress-fill" style="width:10%"></div>
         </div>
       </div>
 
-      <h2 id="question-heading" class="question-text">
-        Which method converts a JavaScript object into a JSON string?
-      </h2>
+      <h2 id="question-heading" class="question-text"></h2>
 
-      <ul class="options-list">
+      <ul class="options-list" role="list">
         <li>
           <button class="option" type="button" data-index="0">
             <span class="option-letter">A</span>
-            <span class="option-text">JSON.parse()</span>
+            <span class="option-text"></span>
+            <kbd class="option-kbd" aria-hidden="true">1</kbd>
           </button>
         </li>
         <li>
-          <button class="option is-selected" type="button" data-index="1">
+          <button class="option" type="button" data-index="1">
             <span class="option-letter">B</span>
-            <span class="option-text">JSON.stringify()</span>
+            <span class="option-text"></span>
+            <kbd class="option-kbd" aria-hidden="true">2</kbd>
           </button>
         </li>
         <li>
           <button class="option" type="button" data-index="2">
             <span class="option-letter">C</span>
-            <span class="option-text">Object.toString()</span>
+            <span class="option-text"></span>
+            <kbd class="option-kbd" aria-hidden="true">3</kbd>
           </button>
         </li>
         <li>
           <button class="option" type="button" data-index="3">
             <span class="option-letter">D</span>
-            <span class="option-text">Object.freeze()</span>
+            <span class="option-text"></span>
+            <kbd class="option-kbd" aria-hidden="true">4</kbd>
           </button>
         </li>
       </ul>
 
       <div class="stage-footer">
-        <span class="hint">Select an option to continue</span>
-        <button class="btn btn-primary js-move-next" id="next-btn" type="button">Next Question</button>
+        <span class="hint" aria-live="polite">Select an option to continue</span>
+        <button class="btn btn-primary js-move-next" id="next-btn" type="button" disabled>
+          <span class="btn-label">Next Question</span>
+          <kbd class="kbd-badge" aria-hidden="true">↵ Enter</kbd>
+        </button>
       </div>
     </section>
-  
 
-
-
-
-
-      <!-- ============ RESULT SCREEN ============ -->
-   
-
-     <section class="screen screen results-screen" id="result-screen" aria-labelledby="result-heading">
+    <!-- ============ RESULT SCREEN ============ -->
+    <section class="screen results-screen" id="result-screen" aria-labelledby="result-heading">
       <p class="eyebrow">Quiz Complete</p>
       <h1 id="result-heading">Nice work.</h1>
 
       <div class="score-card">
         <span class="score-label">Final Score</span>
-        <span class="score-value">8<span class="score-total"> / 10</span></span>
-        <span class="score-message">80% — above the pass mark</span>
+        <span class="score-value">0<span class="score-total"> / 10</span></span>
+        <span class="score-message"></span>
       </div>
 
       <div class="stage-footer stage-footer-center">
-        <button class="btn btn-ghost" id="review-btn" type="button">Review Answers</button>
-        <button class="btn btn-primary" id="restart-btn" type="button">Play Again</button>
+        <button class="btn btn-primary" id="restart-btn" type="button">
+          <span>Play Again</span>
+          <kbd class="kbd-badge" aria-hidden="true">↵ Enter</kbd>
+        </button>
       </div>
     </section>
 
- 
-
-
   </main>
-
 </div>
+
+<canvas id="confetti-canvas" class="confetti-canvas"></canvas>
 <script type="module" src="script.js"></script>
 </body>
 </html>
