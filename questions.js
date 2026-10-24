@@ -80,5 +80,15 @@ export const questions = [
       "The number of properties in the object"
     ],
     correctAnswer: 1
+  },
+  {
+    questionText: "What does `Object.keys(user)` return?",
+    options: [
+      "The values stored in the object",
+      "An array of the object's property names",
+      "A single string of all properties combined",
+      "The number of properties in the object"
+    ],
+    correctAnswer: 1
   }
 ];

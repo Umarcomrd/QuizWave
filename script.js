@@ -190,7 +190,6 @@ class ConfettiEngine {
       p.vx *= 0.985; // air resistance
       p.rotation += p.rotationSpeed;
       p.opacity -= p.decay;
-
       if (p.opacity > 0 && p.y < this.canvas.height) {
         activeParticles++;
         this.ctx.save();
@@ -210,6 +209,7 @@ class ConfettiEngine {
     }
   }
 }
+
 
 /* ====================================================================
    3. Syntax & Text Formatting Helpers
